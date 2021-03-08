@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <h2>Submisi Tugas Khusus ITF FUKI - Fetch API</h2>
+      <h3>Nama: Muhammad Urwatil Wutsqo</h3>
+    </div>
+    <div class="content">
+      <h3>Title:</h3>
+      <p id="title">loading title...</p>
+      <h3>Body:</h3>
+      <p id="body">loading body...</p>
+    </div>
+  </body>
+  <script>
+    let url = "https://jsonplaceholder.typicode.com/posts/1";
+    fetch(url)
+      .then((response) => response.json())
+      .then((post) => {
+        document.getElementById("title").innerHTML = post.title;
+        document.getElementById("body").innerHTML = post.body;
+      });
+  </script>
+</html>
